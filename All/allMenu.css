@@ -1,0 +1,82 @@
+.profileH{
+    display: flex;
+    /* justify-content: space-between; */
+    position: absolute;
+    gap: calc(100vw - 11.5rem);
+    margin: 1rem 1rem 0 1rem;
+}
+
+.profileLogoH{
+    background-color: black;
+    border-radius: 50%;
+    height: 3rem;
+    width: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-left: 4rem; */
+}
+
+.profileLogoH i{
+    font-size: 2rem;
+    color: white;
+}
+
+.profileH p{
+    position: absolute;
+    top: 3.2rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/*-------------------------------------Background----------------------------------------*/
+
+
+
+
+/*-------------------------------------Menu----------------------------------------*/
+.menusH{
+    height: 6rem;
+    width: 100vw;
+    /* margin-top: calc(100vh - 10.8rem); */
+    background-color: black;
+    border-radius: 2rem 2rem 0 0;
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+}
+
+.menusH i{
+    font-size: 2rem;
+    color: white;
+}
+
+.menusH p{
+    font-size: .8rem;
+    color: white;
+}
+
+.homeHoH, .routeHoH, .trackHoH, 
+.bookmarkHoH, .scheduleHoH{
+    margin-top: 1.2rem;
+    height: 9vh;
+    width: 18vw;
+    display: grid;
+    place-items: center;
+    border-radius: 4rem 4rem 4rem 4rem;
+
+    &:hover{
+        background-color: white;
+    }
+
+    &:hover i{
+        color: black;
+    }
+
+    &:hover p{
+        display: none;
+    }
+}
+
+
