@@ -13,16 +13,16 @@
 }
 
 .bookmarkTitleH h1{
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 600;
+    padding-left: .4rem;
 }
 
 .bookmarkLeftH{
-    /* margin-top: .8rem; */
-    padding-top: 3rem;
+    padding-top: 4rem;
     background-color: #8f00ff;
     border: 1px solid blue;
-    height: calc(100vh - 4.6rem);
+    height: 100vh;
     width: 46vw;
 }
 
@@ -43,7 +43,6 @@
     margin: 8rem 0 0 0;
     background-color: #8f00ff;
     border: 1px solid blue;
-    /* height: calc(100vh - 6r////////////em); */
     align-self: flex-start;
     width: 45vw;
 }

@@ -1,0 +1,73 @@
+body{
+    text-align: center;
+}
+
+.superAdminLogoH{
+    font-size: 1.8rem;
+    margin-top: 1.6rem;
+    text-align: center;
+}
+
+.superAdminH{
+    font-size: 1.2rem;
+    margin-top: .4rem;
+    text-align: center;
+}
+
+.adminH{
+    margin-bottom: 1rem;
+}
+
+.adminsH{
+    margin-bottom: 4rem;
+}
+
+.adminAreaH{
+    margin: .8rem 2rem;
+}
+
+.adminH h1{
+    font-size: 1.8rem;
+    /* font-weight: 900; */
+}
+
+.adminH h2{
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: .2rem 0 0 2rem;
+}
+
+.adminH h3{
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: .2rem 0 0 2rem;
+}
+
+button{
+    padding: .4rem 1.6rem;
+}
+
+.superBtnH button{
+    margin: .6rem 0 .6rem 1.2rem;
+}
+
+.superBtnEditH{
+    background-color: #ac49f7;
+}
+
+.superAddBtnContH{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: .4rem 0;
+    background-color: white;
+}
+
+.superAddBtnH{
+    padding: .6rem .7rem;
+}
+
+.superAddBtnH i{
+    font-size: 1.6rem;
+}

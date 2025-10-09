@@ -1,7 +1,22 @@
+/*
+    colors:
+        Background: B2A5FF
+        Divs: 6A46B0
+        Button: B29CEE | B299F6
+        Links: 5A00A3
+        Text: C8C8C8
+        lavenderi: 7A55D4
+*/
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body{
+    background-color: #B2A5FF;
+    margin:0;
 }
 
 input{
@@ -10,14 +25,20 @@ input{
     border-radius: 1rem;
 }
 
+input[type="submit"] {
+    background-color: #B29CEE;
+}
+
 button{
     padding: 1.2em 3.4em;
     border-radius: 4rem;
+    background-color: #B29CEE;
 }
 
 a{
     text-decoration: none;
-    color: #8f00ff;
+    color: #5A00A3;
+
 }
 
 error{
@@ -26,7 +47,7 @@ error{
 }
 
 e{
-    color: red;
+    color: rgb(195, 0, 0);
     display: block;
     margin-top: -1rem;
 }
@@ -34,4 +55,13 @@ e{
 alignCenter{
     display: flex;
     justify-content: center;
+}
+
+.background{
+    position: absolute;
+    z-index: -5;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 14rem;
 }

@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
-    <link rel="stylesheet" href="../../All/allCss.css">
+    <link rel="stylesheet" href="../allCss.css">
     <link rel="stylesheet" href="login.css">
 </head>
 <body>
@@ -21,14 +21,14 @@
                 <?php
                     if(isset($_SESSION['logError'])){
                         echo "<br><e style='margin-top: -.8rem;'>".$_SESSION['logError']."</e>";
-                        session_unset();
-                        session_destroy();
+                        unset($_SESSION['logError']);
                     }
                 ?>
             </error>
         <br>
         <input type="submit" name="submitH" class="logBtnH" value="Log In">
-        <p class="logRegH">Don't have an account? <a href="../registerPassenger/registerPassengerH.php"> register</a>!</p>
+        <a href="../../Admin/loginAdmins/loginAdminH.php"> <p class="logAdminH">Login as admin? </p></a>
+        <p class="logRegH">Don't have an account? <a href="../../Passenger/registerPassenger/registerPassengerH.php"> register</a>!</p>
     </form>
 </body>
 </html>

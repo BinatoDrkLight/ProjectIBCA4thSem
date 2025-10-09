@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +11,7 @@
 </head>
 <body>
 <?php
-    include_once('../../All/allHeader.php');
+    include_once('../../All/allHeader.php'); 
 ?>
     <div class="profileColH">
         <div class="profilePicH">
@@ -18,24 +21,55 @@
             <h1>Passenger</h1>
         </div>
     </div>
+
+    <?php
+        //Connect to database.
+        include_once('../../All/allDatabaseConnection.php');
+        $con = dbConnection();
+
+        //Prepared statement function.
+        include_once('../../All/allPreparedStatement.php');
+
+        //Params
+        $lr_id = $_SESSION['Lr_id'];
+        $queryProfile = "SELECT CONCAT(P_fName, ' ', P_sName) AS P_full_name, P_gmail, P_phone_no, Lr_user
+                        FROM loginregister AS lr 
+                        LEFT JOIN passenger AS p 
+                        ON lr.P_id = p.P_id
+                        LEFT JOIN p_phone_nos AS ph
+                        ON p.P_id = ph.P_id
+                        WHERE Lr_id = ?;";
+        $typeProfile = "s";
+        $paramsProfile = [$lr_id];
+
+        //Call prepared statement function
+        $resArrProfile = preparedStmt($queryProfile, $con, $typeProfile, $paramsProfile);
+        $stmtProfile = $resArrProfile['stmt'];
+
+        //Get result from query
+        $resultProfileData = mysqli_stmt_get_result($stmtProfile);
+
+        //Check if anything is retrieved.
+        if($row = mysqli_fetch_assoc($resultProfileData)){
+            $fullNameD = $row['P_full_name'];
+            $gmailD = $row['P_gmail'];
+            $phoneD = $row['P_phone_no'];
+            $userD = $row['Lr_user'];
+        }
+        $con->close();
+        mysqli_stmt_close($stmtProfile);
+    ?>
+
     <div class="profileInfoH">
         <div class="profileInfoLeftH">
-            <p>Name: Binesh Bahadur Adhikari</p>
+            <p>Name: <?php echo $fullNameD ?> </p>
             <p>Age: 20</p>
-            <p>Gmail: binesh2adhikari@gmail.com</p>
-            <p>Phone no: 9823820865</p>
-            <p>User: Passenger</p>
-
+            <p>Gmail: <?php echo $gmailD ?> </p>
+            <p>Phone no: <?php echo $phoneD ?> </p>
+            <p>User: <?php echo $userD ?> </p>
         </div>
-        <!-- <div class="profileInfoRightH">
-            <p>Bus Company:</p>
-            <p>Bus No:</p>
-            <p>Color:</p>
-            <p>Time:</p>
-            <p>Route:</p>
-        </div> -->
         <button class="profileMoreH">More</button><br><br>
-        <button class="profileLogoutH"><a href="../home/home.php">Logout</a></button>
+        <button class="profileLogoutH"><a href="../../All/login/loginH.php">Logout</a></button>
     </div> 
 </body>
 </html>

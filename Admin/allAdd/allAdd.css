@@ -1,0 +1,66 @@
+.regLogoH{
+    margin-top: 5rem;
+}
+
+.regHeaH{
+    margin-top: 1.6rem;
+}
+
+/*-------------------------------------------------------------------------------------*/
+
+.regForm{
+    margin-top: 2rem;
+    min-width: 20rem;
+    width: 26.6rem;
+}
+
+.regRouteStart, .regSchStTime, .regDriFname, .regDriPassL{
+    border-radius: 0 4rem 0 5rem;
+}
+
+.regRouteEnd, .regSchEndTime, .regDriSname, .regDriPassR{
+    border-radius: 4rem 0 5rem 0;
+}
+
+.regRouteName, .regSchDay, .regBusModel, .regRegNo, .regDriGmail, .regDriPhone, .regDriAddress, .regDriLicense{
+    border-radius: 0 0 5rem 5rem;
+    margin: .2rem 0 0 0;
+    padding: 1rem 2rem;
+}
+
+/*--------------------------------------------------------------------------------------*/
+
+input{
+    text-align: center;
+}
+
+select{
+    text-align: center;
+    border: 2px solid black;
+}
+
+.regRoutes input, .regSchTimes input, .regDriNames input, .regDriPasses input{
+    height: 3.2rem;
+    width: 9rem;
+    margin: .2rem 0 0 0;
+    padding: 1rem 2rem;
+}
+
+.regRoutes, .regSchTimes, .regDriNames, .regDriPasses{
+    display: flex;
+    justify-content: space-around;
+}
+
+body{
+    text-align: center;
+}
+
+/*-------------------------------------------------------------------------*/
+.regAdd{
+    margin-bottom: .6rem;
+    margin-top: 1.4rem;
+    padding: 1.2em 3.4em;
+    border-radius: 4rem;
+}
+
+/*------------------------------------- regPasFormError----------------------------*/

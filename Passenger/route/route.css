@@ -1,8 +1,11 @@
+.routeContainerH{
+    display: flex;
+    gap: 1rem;
+}
+
 .routeLeftH{
-    /* margin-top: 1rem; */
     padding-top: 4rem;
-    background-color: #8f00ff;
-    border: 1px solid blue;
+    background-color: #6A46B0;
     height: calc(100vh);
     width: 50vw;
     position: relative;
@@ -32,6 +35,74 @@
     font-weight: 500;
     height: 2rem;
     width: 10rem;
-    margin-bottom: 1rem;
     margin-left: .4rem;
 }
+
+
+/*--------------------------------------- Drop Down ------------------------------------------*/
+.routesCompsH{
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    font-size: .8rem;
+    position: absolute;
+    padding-top: .3rem;
+    right: .6rem;
+}
+
+.routeDropDownH{
+    padding-left: 1.6rem;
+    list-style: none;   
+    margin-bottom: .6rem;
+}
+
+.routeDropDownH li{
+    margin-bottom: .6rem;
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+/*--------------------------------------- Schedule Right ------------------------------------------*/
+
+.routeRightH{
+    position: absolute;
+    top: 8rem;
+    margin-left: calc(50vw + 0.5rem);
+    background-color: #6A46B0;
+    width: 45vw;
+}
+
+.routesH h1{
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: .4rem 0 0 .6rem;
+}
+
+.routesH h2{
+    font-size: 1rem;
+    font-weight: 500;
+    padding-left: .6rem;
+}
+
+.routesH p{
+    font-size: .9rem;
+    font-weight: 500;
+    padding: 0 0 .4rem .6rem;
+}
+
+
+/*--------------------------------------- Schedule Right ------------------------------------------*/
+
+.routesCompsH i.fas {
+    transition: transform 0.3s ease; /* smooth rotation */
+}
+
+.routesCompsH.active i.fas {
+    transform: rotate(180deg); /* upside down */
+}
+
+
+
+
+
+

@@ -7,6 +7,7 @@
 }
 
 .profilePicH{
+    margin-top: 2rem;
     height: 10rem;
     width: 10rem;
     background-color: black;
@@ -31,4 +32,8 @@
 
 .profileMoreH, .profileLogoutH{
    padding: .5rem 1.8rem;
+}
+
+.profileLogoutH a{
+    color: black;
 }

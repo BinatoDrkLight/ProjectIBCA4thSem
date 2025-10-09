@@ -35,8 +35,8 @@ input{
 }
 
 .regPasNames input, .regPasPasses input{
-    height: 1rem;
-    width: 5.4rem;
+    height: 3.2rem;
+    width: 9rem;
     margin: .2rem 0 0 0;
     padding: 1rem 2rem;
 }

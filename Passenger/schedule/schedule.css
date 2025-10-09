@@ -3,23 +3,17 @@
     gap: 1rem;
 }
 
-/* .bookmarkTitleH h1{
-    font-size: 1.8rem;
-    font-weight: 600;
-} */
-
 .scheduleLeftH{
-    margin-top: .8rem;
     background-color: #8f00ff;
     border: 1px solid blue;
-    height: calc(100vh - 4.6rem);
-    width: 46vw;
+    height: 100vh;
+    width: 50vw;
 }
 
 .scheduleTitleH input{
     height: 1rem;
     width: 9rem;
-    margin: .4rem 0 0 0;
+    margin: 4rem 0 0 0;
 }
 
 .scheduleCateH{
@@ -39,7 +33,7 @@
     margin-left: .4rem;
 }
 
-/*---------------------------------- Bookmark Right -------------------------------- */
+/*---------------------------------- Schedule Right -------------------------------- */
 .scheduleRightH{
     margin: 2rem 0 0 0;
     background-color: #8f00ff;

@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register as Passenger</title>
+    <title>Register as passenger</title>
     <link rel="stylesheet" href="../../All/allCss.css">
     <link rel="stylesheet" href="registerPassenger.css">
 </head>
@@ -81,15 +81,15 @@
                     <?php
                         if(isset($_SESSION['phoneError'])){
                             echo "<br><e>".$_SESSION['phoneError']."</e>";
-                            session_unset();
-                            session_destroy();
                         }
+                        session_unset();
+                        session_destroy();
                     ?>
                 </error>
             </div>
             
             <input type="submit" name="registerH" class="regPasSign" value="Sign Up">
-            <p class="regPasAlre">Already <a href="../login/loginH.php">Signed up</a>?</p>
+            <p class="regPasAlre">Already <a href="../../All/login/loginH.php">Signed up</a>?</p>
         </form>
     </alignCenter>
 </body>

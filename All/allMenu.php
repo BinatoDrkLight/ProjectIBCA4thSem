@@ -12,48 +12,49 @@
 <!--...................Menu............................-->
 <div class="menusH">
             <div class="homeH">
-                <div class="homeHoH">
-                    <a href="../home/home.php">
-                        <i class="fa-solid fa-house"></i>
-                        <p>Home</p>
-                    </a>
-                </div>
+                <a href="../home/home.php">
+                    <div class="homeHoH">
+                            <i class="fa-solid fa-house"></i>
+                            <p>Home</p>
+                    </div>
+                </a>
             </div>
 
             <div class="routeH">
-                <div class="routeHoH">
-                    <a href="../route/route.php">
-                        <i class="fa-solid fa-route"></i>
-                        <p>Route</p>
-                    </a>
-                </div>
+                <a href="../route/routeH.php">
+                    <div class="routeHoH">
+                            <i class="fa-solid fa-route"></i>
+                            <p>Route</p>
+                    </div>
+                </a>
             </div>
 
             <div class="trackH">
-                <div class="trackHoH">
-                    <a href="../">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <p>Track</p>
-                    </a>
-                </div>
+                <a href="../track/trackH.php">
+                    <div class="trackHoH">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <p>Track</p>
+                    </div>
+                </a>
+
             </div>
 
             <div class="bookmarkH">
-                <div class="bookmarkHoH">
-                    <a href="../bookmark/bookmarkH.php">
-                        <i class="fa-regular fa-bookmark"></i>
-                        <p>Bookmark</p>
-                    </a>
-                </div>
+                <!-- <a href="../bookmark/bookmarkH.php"> -->
+                    <div class="bookmarkHoH">
+                            <i class="fa-regular fa-bookmark"></i>
+                            <p>Bookmark</p>
+                    </div>
+                </a>
             </div>
 
             <div class="scheduleH">
-                <div class="scheduleHoH">
-                    <a href="../schedule/scheduleH.php">
-                        <i class="fa-solid fa-calendar-days"></i>
-                        <p>Schedule</p>
-                    </a>
-                </div>
+                <!-- <a href="../schedule/scheduleH.php"> -->
+                    <div class="scheduleHoH">
+                            <i class="fa-solid fa-calendar-days"></i>
+                            <p>Schedule</p>
+                    </div>
+                </a>
             </div>
         </div>
 </body>

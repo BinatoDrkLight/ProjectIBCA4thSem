@@ -1,9 +1,9 @@
 .profileH{
     display: flex;
-    /* justify-content: space-between; */
-    position: absolute;
+    position: fixed;
     gap: calc(100vw - 11.5rem);
     margin: 1rem 1rem 0 1rem;
+    z-index: 2;
 }
 
 .profileLogoH{
@@ -14,12 +14,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* margin-left: 4rem; */
 }
 
 .profileLogoH i{
     font-size: 2rem;
-    color: white;
+    color: #b29cee;
 }
 
 .profileH p{
@@ -28,11 +27,6 @@
     font-size: 1.1rem;
     font-weight: 500;
 }
-
-/*-------------------------------------Background----------------------------------------*/
-
-
-
 
 /*-------------------------------------Menu----------------------------------------*/
 .menusH{
@@ -49,12 +43,13 @@
 
 .menusH i{
     font-size: 2rem;
-    color: white;
+    color: #b29cee;
 }
 
 .menusH p{
     font-size: .8rem;
-    color: white;
+    color: #c8c8c8;
+    margin-top: -.7rem;
 }
 
 .homeHoH, .routeHoH, .trackHoH, 
@@ -67,7 +62,7 @@
     border-radius: 4rem 4rem 4rem 4rem;
 
     &:hover{
-        background-color: white;
+        background-color: #B29CEE;
     }
 
     &:hover i{

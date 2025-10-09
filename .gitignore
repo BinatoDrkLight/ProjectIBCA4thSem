@@ -1,0 +1,9 @@
+#OS files
+Thumbs.db
+
+#PHP cache & logs
+/cache/
+*.logs
+
+#IDE/editor
+.vscode/

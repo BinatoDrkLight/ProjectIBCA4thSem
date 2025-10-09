@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,9 +10,14 @@
     <link rel="stylesheet" href="home.css">
 </head>
 <body>
-    <?php
-        include_once('../../All/allHeader.php');
-        include_once('../../All/allMenu.php');
-    ?>
+    <div>
+        <div class="background">
+            <?php include '../../All/allLogo.php' ?>
+        </div>
+        <?php
+            include_once('../../All/allHeader.php');
+            include_once('../../All/allMenu.php');
+        ?>
+    </div>
 </body>
 </html>

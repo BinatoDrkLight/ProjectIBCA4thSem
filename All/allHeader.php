@@ -12,10 +12,12 @@
 <!--.....................Header............................ -->
     <div class="profileH">
             <h1 class="homeTracH">Trackie</h1>
-            <div class="profileLogoH">
-                <i class="fa-regular fa-user"></i>
-                <p>Profile</p>
-            </div>
+            <a href="../profile/profileH.php">
+                <div class="profileLogoH">
+                    <i class="fa-regular fa-user"></i>
+                    <p>Profile</p>
+                </div>
+            </a>
     </div>
 </body>
 </html>

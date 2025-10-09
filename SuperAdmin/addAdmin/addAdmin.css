@@ -1,0 +1,61 @@
+.regPasLogoH{
+    margin-top: 5rem;
+}
+
+.regPasHeaH{
+    margin-top: 1.6rem;
+}
+
+/*-------------------------------------------------------------------------------------*/
+
+.regAdmForm{
+    margin-top: 2rem;
+    min-width: 20rem;
+    width: 26.6rem;
+}
+
+.regAdmFname, .regAdmPassL{
+    border-radius: 0 4rem 0 5rem;
+}
+
+.regAdmSname, .regAdmPassR{
+    border-radius: 4rem 0 5rem 0;
+}
+
+.regAdmGmail, .regAdmAddress, .regAdmArea{
+    border-radius: 0 0 5rem 5rem;
+    margin: .2rem 0 0 0;
+    padding: 1rem 2rem;
+}
+
+/*--------------------------------------------------------------------------------------*/
+
+input{
+    text-align: center;
+}
+
+.regAdmNames input, .regAdmPasses input{
+    height: 3.2rem;
+    width: 9rem;
+    margin: .2rem 0 0 0;
+    padding: 1rem 2rem;
+}
+
+.regAdmNames, .regAdmPasses{
+    display: flex;
+    justify-content: space-around;
+}
+
+body{
+    text-align: center;
+}
+
+/*-------------------------------------------------------------------------*/
+.regAdmSign{
+    margin-bottom: .6rem;
+    margin-top: 1.4rem;
+    padding: 1.2em 3.4em;
+    border-radius: 4rem;
+}
+
+/*------------------------------------- regPasFormError----------------------------*/

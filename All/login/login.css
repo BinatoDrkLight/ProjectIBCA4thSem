@@ -1,0 +1,28 @@
+*{
+    text-align: center;
+}
+
+.logLogoH{
+    margin: 10rem 0 0 0;
+}
+
+.logHeaH{
+    text-align: left;
+    margin: 2rem 0 2rem 4rem;
+}
+
+.logBtnH{
+    margin: -.1rem 0 .6rem 0;
+    padding: 1.2em 3.4em;
+    border-radius: 4rem;
+}
+
+.logPassH{
+    margin-bottom: 0;
+}
+
+input{
+    text-align: left;
+}
+
+
