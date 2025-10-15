@@ -22,7 +22,6 @@ Trackie is a simple bus tracking system built using php, leaflet js, js. It allo
 - [Contributing](#contributing)
 - [Logo License](#logo-license)
 - [Acknowledgement](#acknowledgement)
-- [License](#license)
 - [Contact](#contact)
 
 ## About
@@ -88,7 +87,6 @@ Trackie is a bus tracking system designed for mobile friendly interfaces. Users 
 - SuperAdmin
 - .gitignore
 - index.php
-- LICENSE
 - README.md
 - trackie.sql
 
@@ -105,11 +103,6 @@ The project logo <img src="Assets/trackieLogo.svg" alt="Trackie Logo" width="60"
 - Leaflet.js (Maps)
 - Figma (UI design)
 - ChatGPT (Assisted with track page and multi level menu)
-
-## License
-© BinatoDrkLight 2025. This project is licensed under the **MIT License**  
-You are free to use, modify, and distribute this software, provided that you include the original copyright and license notice in any copies or substantial portions of the software.  
-See the [LICENSE](LICENSE) file for details.
 
 ## Contact
 Author: Binesh Adhikari  
