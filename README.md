@@ -6,7 +6,6 @@
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
 ![Status](https://img.shields.io/badge/Status-Learning%20Project-lightgrey)
-![License: MIT](https://img.shields.io/badge/License-MIT-yellow)  
 
 Trackie is a simple bus tracking system built using php, leaflet js, js. It allows users to track buses in real-time, plan their arrival at bus stops efficiently, and helps drivers share their live location with passengers. This project is primarily for learning purposes and is not production-ready.
 
