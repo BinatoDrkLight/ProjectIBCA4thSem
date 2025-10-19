@@ -13,6 +13,7 @@
 <?php
     include_once('../../All/allHeader.php'); 
 ?>
+
     <div class="profileColH">
         <div class="profilePicH">
 

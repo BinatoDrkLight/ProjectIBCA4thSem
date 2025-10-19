@@ -1,8 +1,12 @@
 .profileH{
     display: flex;
     position: fixed;
-    gap: calc(100vw - 11.5rem);
-    margin: 1rem 1rem 0 1rem;
+    top: 0;
+    left: 0;
+    right: 0;
+    gap: calc(100vw - 14rem);
+    margin-top: 2rem;
+    justify-content: space-around;
     z-index: 2;
 }
 

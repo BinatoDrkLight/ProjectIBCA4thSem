@@ -233,7 +233,7 @@
   };
 
   // --- Add buttons in bottom → top order for correct stacking ---
-  createMapButton("fas fa-user", 90, () => {
+  createMapButton("fas fa-user", 190, () => {
     if (!userMarker) return alert("User location not available!");
     followUser = true;
     initViewDone = false;
