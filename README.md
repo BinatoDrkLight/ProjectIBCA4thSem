@@ -9,6 +9,9 @@
 
 Trackie is a simple bus tracking system built using php, leaflet js, js. It allows users to track buses in real-time, plan their arrival at bus stops efficiently, and helps drivers share their live location with passengers. This project is primarily for learning purposes and is not production-ready.
 
+## Live Demo
+You can view the live project > [<img src="Assets/trackieLogo.svg" alt="Trackie Logo" width="60" style="vertical-align:middle;" />](https://trackie.is-great.net/)
+
 ## Table of Contents
 - [About](#about)
 - [Features](#features)
@@ -108,3 +111,4 @@ Author: Binesh Adhikari
 Email: binesh2adhikari@gmail.com  
 GitHub: https://github.com/BinatoDrkLight/  
 LinkedIn: https://www.linkedin.com/in/binesh-adhikari-it  
+Project Live: https://trackie.is-great.net/
