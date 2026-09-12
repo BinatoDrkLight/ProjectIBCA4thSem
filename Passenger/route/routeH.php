@@ -120,6 +120,8 @@
                             });
                         } else {
                             listElement.style.display = "none";
+                            $(`.routeCard_R${routeIdNum}`).remove();
+                            $(listElement).find('.routeListTwo').removeClass('active');
                         }
                     });
 
@@ -127,8 +129,12 @@
                     $(document).on('click', '.routeListTwo', function(e) {
                         e.stopPropagation();
 
-                        // Independent toggle: each sub-option toggles its own state
-                        $(this).toggleClass('active');
+                        let $this = $(this);
+                        let targetRouteId = parseInt($this.data('route-id'));
+                        let targetBusModel = String($this.data('bus-model'));
+                        let groupClass = `routeGroup_R${targetRouteId}_${encodeURIComponent(targetBusModel).replace(/[^a-zA-Z0-9]/g, '_')}`;
+
+                        $this.toggleClass('active');
                        
                         let rightContV = $('.routeRightH');
                         if(rightContV.length === 0){
@@ -136,37 +142,35 @@
                             $('body').append(rightContV);
                         }
 
-                        let targetRouteId = parseInt($(this).data('route-id'));
-                        let targetBusId = parseInt($(this).data('bus-id'));
-                        let targetBusModel = $(this).data('bus-model');
-                        let cardId = `routeCard_${targetRouteId}_${targetBusId}`;
+                        if($this.hasClass('active')){
+                            ajaxFunc('routeP.php', 'GET', function(response){
+                                if(!$this.hasClass('active')) return;
 
-                        if($(this).hasClass('active')){
-                            if ($(`#${cardId}`).length === 0) {
-                                ajaxFunc('routeP.php', 'GET', function(response){
-                                    response.forEach(function(res){
-                                        if(parseInt(res.R_id) === targetRouteId && res.B_model === targetBusModel && parseInt(res.B_id) === targetBusId){
-                                            let distDisplay = '';
-                                            if (typeof getDistance === 'function' && typeof userLat === 'number' && typeof userLng === 'number' && res.L_latitude && res.L_longitude) {
-                                                let distM = getDistance(userLat, userLng, parseFloat(res.L_latitude), parseFloat(res.L_longitude));
-                                                distDisplay = `${distM}m`;
-                                            }
+                                $(`.${groupClass}`).remove();
 
-                                            let card = $(`
-                                                <div id="${cardId}" class="routesH" data-b-id="${res.B_id}" data-l-id="${res.L_id}">
-                                                    <h1>${res.R_start} - ${res.R_end}</h1>
-                                                    <h2>${res.B_reg_no}</h2>
-                                                    <p>${distDisplay}</p>
-                                                </div>
-                                            `);
-                                            rightContV.append(card);
+                                const renderedBusIds = new Set();
+                                response.forEach(function(res){
+                                    if(parseInt(res.R_id) === targetRouteId && res.B_model === targetBusModel && res.B_id && !renderedBusIds.has(res.B_id)){
+                                        renderedBusIds.add(res.B_id);
+                                        let distDisplay = '';
+                                        if (typeof getDistance === 'function' && typeof userLat === 'number' && typeof userLng === 'number' && res.L_latitude && res.L_longitude) {
+                                            let distM = getDistance(userLat, userLng, parseFloat(res.L_latitude), parseFloat(res.L_longitude));
+                                            distDisplay = `${distM}m`;
                                         }
-                                    });
+
+                                        let card = $(`
+                                            <div class="routesH ${groupClass} routeCard_R${targetRouteId}" data-b-id="${res.B_id}" data-l-id="${res.L_id}">
+                                                <h1>${res.R_start} - ${res.R_end}</h1>
+                                                <h2>${res.B_reg_no}</h2>
+                                                <p>${distDisplay}</p>
+                                            </div>
+                                        `);
+                                        rightContV.append(card);
+                                    }
                                 });
-                            }
+                            });
                         } else {
-                            // Toggled off: remove only this sub-option's card
-                            $(`#${cardId}`).remove();
+                            $(`.${groupClass}`).remove();
                         }
                     });
 
