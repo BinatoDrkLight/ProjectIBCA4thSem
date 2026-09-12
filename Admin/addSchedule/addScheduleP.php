@@ -42,13 +42,10 @@
             $resArrCheckSchedule = preparedStmt($checkScheduleQuery, $con, $checkScheduleTypes, $checkScheduleParams);
             $resCheckScheduleData = mysqli_stmt_get_result($resArrCheckSchedule['stmt']);
 
-            //Check if seccess
+            //Check if success
             if(mysqli_num_rows($resCheckScheduleData) > 0){
-                echo "Schedule already exists in schedule table";
                 $isValid = false;
-                $_SESSION['scheduleExistsError'] = "These schedule already Exists";
-            } else {
-                echo "Schedule not found in schedule table";
+                $_SESSION['scheduleExistsError'] = "This schedule already exists in records.";
             }
             mysqli_stmt_close($resArrCheckSchedule['stmt']);
         }
@@ -63,18 +60,17 @@
             //Call the preparedStmt function
             $resArrInsertSchedule = preparedStmt($insertScheduleQuery, $con, $insertScheduleTypes, $insertScheduleParams);
 
-            //Check if seccess
+            //Check if success
             if(!$resArrInsertSchedule['res']){
-                echo "Couldn't insert into schedule table";
                 mysqli_stmt_close($resArrInsertSchedule['stmt']);
                 mysqli_close($con);
-                die;
+                die("Couldn't insert into schedule table.");
             } else {
-                echo "Insertion in schedule table successful";
+                mysqli_stmt_close($resArrInsertSchedule['stmt']);
+                mysqli_close($con);
                 header("Location: ../manageDriver/manageDriverH.php");
                 exit();
             }
-             mysqli_stmt_close($resArrInsertSchedule['stmt']);
         } else {
             mysqli_close($con);
             header("Location: ./addScheduleH.php");

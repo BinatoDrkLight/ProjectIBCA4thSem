@@ -53,14 +53,12 @@
             //Call the preparedStmt function
             $resArrBus = preparedStmt($checkBusQuery, $con, $checkBusTypes, $checkBusParams);
 
-            //Check if seccess
+            //Check if success
             if(!$resArrBus['res']){
-                echo "Couldn't insert into bus table";
                 mysqli_stmt_close($resArrBus['stmt']);
                 mysqli_close($con);
-                die;
+                die("Couldn't insert into bus table.");
             } else {
-                echo "Insertion in bus table successful";
                 mysqli_stmt_close($resArrBus['stmt']);
                 mysqli_close($con);
                 header("Location: ../manageDriver/manageDriverH.php");

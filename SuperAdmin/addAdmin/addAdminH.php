@@ -14,96 +14,98 @@
     <h2 class="regPasLogoH">Trackie<sup>BDL</sup></h2>
     <h1 class="regPasHeaH">Register Admins</h1>
 
-    <alignCenter>
+    <div class="form-align-center">
         <form action="addAdminP.php" method="post" class="regAdmForm">
             <div class="regAdmNames">
                 <div class="regErrorH">
-                    <input type="text" name="firstNameH" class="regAdmFname" placeholder="First Name">
-                    <error>
+                    <input type="text" name="firstNameH" class="regAdmFname" placeholder="First Name" required>
+                    <div class="form-error">
                         <?php
                         if(isset($_SESSION['firstNameError'])){
-                            echo "<br><e>".$_SESSION['firstNameError']."</e>";
+                            echo "<span class='error-msg'>".htmlspecialchars($_SESSION['firstNameError'], ENT_QUOTES, 'UTF-8')."</span>";
+                            unset($_SESSION['firstNameError']);
                         }
                         ?>
-                    </error>
+                    </div>
                 </div>
                 
                 <div class="regErrorH">
-                <input type="text" name="secondNameH" class="regAdmSname" placeholder="Second Name">
-                    <error>
+                    <input type="text" name="secondNameH" class="regAdmSname" placeholder="Second Name" required>
+                    <div class="form-error">
                         <?php
                         if(isset($_SESSION['secondNameError'])){
-                            echo "<br><e>".$_SESSION['secondNameError']."</e>";
-                            }
+                            echo "<span class='error-msg'>".htmlspecialchars($_SESSION['secondNameError'], ENT_QUOTES, 'UTF-8')."</span>";
+                            unset($_SESSION['secondNameError']);
+                        }
                         ?>
-                    </error>
+                    </div>
                 </div>
             </div>
         
             <div class="regErrorH">
-                <input type="text" name="gmailH" class="regAdmGmail" placeholder="Gmail">
-                <error>
+                <input type="email" name="gmailH" class="regAdmGmail" placeholder="Email / Gmail" required>
+                <div class="form-error">
                     <?php
-                            if(isset($_SESSION['gmailError'])){
-                                echo "<br><e>".$_SESSION['gmailError']."</e>";
-                            }
+                        if(isset($_SESSION['gmailError'])){
+                            echo "<span class='error-msg'>".htmlspecialchars($_SESSION['gmailError'], ENT_QUOTES, 'UTF-8')."</span>";
+                            unset($_SESSION['gmailError']);
+                        }
                     ?>
-                </error>
+                </div>
             </div>
             
             <div class="regAdmPasses">
                 <div class="regErrorH">
-                    <input type="text" name="passwordH" class="regAdmPassL" placeholder="Password">
-                    <error>
+                    <input type="password" name="passwordH" class="regAdmPassL" placeholder="Password" required>
+                    <div class="form-error">
                         <?php
                         if(isset($_SESSION['passwordError'])){
-                            echo "<br><e>".$_SESSION['passwordError']."</e>";
+                            echo "<span class='error-msg'>".htmlspecialchars($_SESSION['passwordError'], ENT_QUOTES, 'UTF-8')."</span>";
+                            unset($_SESSION['passwordError']);
                         }
                         ?>
-                    </error>
+                    </div>
                 </div>
                 
                 <div class="regErrorH">
-                <input type="text" name="rePasswordH" class="regAdmPassR" placeholder="Re-password">
-                    <error>
+                    <input type="password" name="rePasswordH" class="regAdmPassR" placeholder="Re-password" required>
+                    <div class="form-error">
                         <?php
                         if(isset($_SESSION['rePasswordError'])){
-                            echo "<br><e>".$_SESSION['rePasswordError']."</e>";
+                            echo "<span class='error-msg'>".htmlspecialchars($_SESSION['rePasswordError'], ENT_QUOTES, 'UTF-8')."</span>";
+                            unset($_SESSION['rePasswordError']);
                         }
                         ?>
-                    </error>
+                    </div>
                 </div>
             </div>
 
             <div class="regErrorH">
-                <input type="text" name="addressH" class="regAdmAddress" placeholder="Address">
-                <error>
+                <input type="text" name="addressH" class="regAdmAddress" placeholder="Address" required>
+                <div class="form-error">
                     <?php
-                            if(isset($_SESSION['addressError'])){
-                                echo "<br><e>".$_SESSION['addressError']."</e>";
-                                // session_unset();
-                            }
+                        if(isset($_SESSION['addressError'])){
+                            echo "<span class='error-msg'>".htmlspecialchars($_SESSION['addressError'], ENT_QUOTES, 'UTF-8')."</span>";
+                            unset($_SESSION['addressError']);
+                        }
                     ?>
-                </error>
+                </div>
             </div>
 
             <div class="regErrorH">
-                <input type="text" name="areaH" class="regAdmArea" placeholder="Area">
-                <error>
+                <input type="text" name="areaH" class="regAdmArea" placeholder="Area" required>
+                <div class="form-error">
                     <?php
-                            if(isset($_SESSION['areaError'])){
-                                echo "<br><e>".$_SESSION['areaError']."</e>";
-                            }
-                            session_unset();
-                            session_destroy();
+                        if(isset($_SESSION['areaError'])){
+                            echo "<span class='error-msg'>".htmlspecialchars($_SESSION['areaError'], ENT_QUOTES, 'UTF-8')."</span>";
+                            unset($_SESSION['areaError']);
+                        }
                     ?>
-                </error>
+                </div>
             </div>
 
-            
             <input type="submit" name="registerH" class="regAdmSign" value="Sign Up">
-            <!-- <p class="regPasAlre">Already <a href="../login/loginH.php">Signed up</a>?</p> -->
         </form>
-    </alignCenter>
+    </div>
 </body>
 </html>

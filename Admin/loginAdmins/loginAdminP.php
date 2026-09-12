@@ -7,8 +7,8 @@
     if(isset($_POST['submitH'])){
         //If submitted using post method.
         if($_SERVER["REQUEST_METHOD"] == "POST"){
-            $usernameP = $_POST['usernameH'];
-            $passwordP = $_POST['passwordH']; 
+            $usernameP = trim($_POST['usernameH'] ?? '');
+            $passwordP = $_POST['passwordH'] ?? ''; 
         
             //Connect to database.
             include_once('../../All/allDatabaseConnection.php');
@@ -35,12 +35,14 @@
                 $hashPassD = $row['La_password'];
                 $la_role = $row['La_role'];
                 $a_id = $row['A_id'];
-                // $bId = $row['B_id'];
 
                 //Compare the passwords
                 if(password_verify($passwordP, $hashPassD)){
-                    $con->close();
+                    session_regenerate_id(true);
+                    $_SESSION['admin_role'] = $la_role;
                     mysqli_stmt_close($stmtUser);
+                    $con->close();
+
                     if($la_role === "Admin"){
                         $_SESSION['A_id'] = $a_id;
                         header("Location: ../welcomeAdmin/welcomeAdminH.php");
@@ -52,11 +54,11 @@
                     }
                 }
             }
-            $con->close();
             mysqli_stmt_close($stmtUser);
-            header("Location: loginAdminH.php");
+            $con->close();
             $_SESSION['logError'] = "Invalid Credentials";
+            header("Location: loginAdminH.php");
+            exit();
         }  
     }
- 
 ?>

@@ -15,178 +15,192 @@
     <h2 class="regLogoH">Trackie<sup>BDL</sup></h2>
     <h1 class="regHeaH">Register Drivers</h1>
 
-    <alignCenter>
+    <div class="form-align-center">
         <form action="addDriverP.php" method="post" class="regForm">
             <!-- ...................................................................................................Driver details ..................................................................................................... -->
             <div class="regDriNames">
                 <div class="regErrorH">
-                    <input type="text" name="firstNameH" class="regDriFname" placeholder="First Name">
-                    <error>
+                    <input type="text" name="firstNameH" class="regDriFname" placeholder="First Name" required>
+                    <div class="form-error">
                         <?php
                         if(isset($_SESSION['firstNameError'])){
-                            echo "<br><e>".$_SESSION['firstNameError']."</e>";
+                            echo "<span class='error-msg'>".htmlspecialchars($_SESSION['firstNameError'], ENT_QUOTES, 'UTF-8')."</span>";
+                            unset($_SESSION['firstNameError']);
                         }
                         ?>
-                    </error>
+                    </div>
                 </div>
                 
                 <div class="regErrorH">
-                <input type="text" name="secondNameH" class="regDriSname" placeholder="Second Name">
-                    <error>
+                    <input type="text" name="secondNameH" class="regDriSname" placeholder="Second Name" required>
+                    <div class="form-error">
                         <?php
                         if(isset($_SESSION['secondNameError'])){
-                            echo "<br><e>".$_SESSION['secondNameError']."</e>";
-                            }
+                            echo "<span class='error-msg'>".htmlspecialchars($_SESSION['secondNameError'], ENT_QUOTES, 'UTF-8')."</span>";
+                            unset($_SESSION['secondNameError']);
+                        }
                         ?>
-                    </error>
+                    </div>
                 </div>
             </div>
         
             <div class="regErrorH">
-                <input type="text" name="gmailH" class="regDriGmail" placeholder="Gmail">
-                <error>
+                <input type="email" name="gmailH" class="regDriGmail" placeholder="Email / Gmail" required>
+                <div class="form-error">
                     <?php
                         if(isset($_SESSION['gmailError'])){
-                            echo "<br><e>".$_SESSION['gmailError']."</e>";
+                            echo "<span class='error-msg'>".htmlspecialchars($_SESSION['gmailError'], ENT_QUOTES, 'UTF-8')."</span>";
+                            unset($_SESSION['gmailError']);
                         }
                     ?>
-                </error>
+                </div>
             </div>
             
             <div class="regDriPasses">
                 <div class="regErrorH">
-                    <input type="text" name="passwordH" class="regDriPassL" placeholder="Password">
-                    <error>
+                    <input type="password" name="passwordH" class="regDriPassL" placeholder="Password" required>
+                    <div class="form-error">
                         <?php
                         if(isset($_SESSION['passwordError'])){
-                            echo "<br><e>".$_SESSION['passwordError']."</e>";
+                            echo "<span class='error-msg'>".htmlspecialchars($_SESSION['passwordError'], ENT_QUOTES, 'UTF-8')."</span>";
+                            unset($_SESSION['passwordError']);
                         }
                         ?>
-                    </error>
+                    </div>
                 </div>
                 
                 <div class="regErrorH">
-                <input type="text" name="rePasswordH" class="regDriPassR" placeholder="Re-password">
-                    <error>
+                    <input type="password" name="rePasswordH" class="regDriPassR" placeholder="Re-password" required>
+                    <div class="form-error">
                         <?php
                         if(isset($_SESSION['rePasswordError'])){
-                            echo "<br><e>".$_SESSION['rePasswordError']."</e>";
+                            echo "<span class='error-msg'>".htmlspecialchars($_SESSION['rePasswordError'], ENT_QUOTES, 'UTF-8')."</span>";
+                            unset($_SESSION['rePasswordError']);
                         }
                         ?>
-                    </error>
+                    </div>
                 </div>
             </div>
 
             <div class="regErrorH">
-            <input type="text" name="phoneH" class="regDriPhone" placeholder="Phone no">
-                <error>
+                <input type="tel" name="phoneH" class="regDriPhone" placeholder="Phone no" required>
+                <div class="form-error">
                     <?php
                         if(isset($_SESSION['phoneError'])){
-                            echo "<br><e>".$_SESSION['phoneError']."</e>";
+                            echo "<span class='error-msg'>".htmlspecialchars($_SESSION['phoneError'], ENT_QUOTES, 'UTF-8')."</span>";
+                            unset($_SESSION['phoneError']);
                         }
                     ?>
-                </error>
+                </div>
             </div>
 
             <div class="regErrorH">
-                <input type="text" name="addressH" class="regDriAddress" placeholder="Address">
-                <error>
+                <input type="text" name="addressH" class="regDriAddress" placeholder="Address" required>
+                <div class="form-error">
                     <?php
-                            if(isset($_SESSION['addressError'])){
-                                echo "<br><e>".$_SESSION['addressError']."</e>";
-                            }
+                        if(isset($_SESSION['addressError'])){
+                            echo "<span class='error-msg'>".htmlspecialchars($_SESSION['addressError'], ENT_QUOTES, 'UTF-8')."</span>";
+                            unset($_SESSION['addressError']);
+                        }
                     ?>
-                </error>
+                </div>
             </div>
 
             <div class="regErrorH">
-                <input type="text" name="licenseH" class="regDriLicense" placeholder="License No">
-                <error>
+                <input type="text" name="licenseH" class="regDriLicense" placeholder="License No" required>
+                <div class="form-error">
                     <?php
-                            if(isset($_SESSION['licenseError'])){
-                                echo "<br><e>".$_SESSION['licenseError']."</e>";
-                            }
+                        if(isset($_SESSION['licenseError'])){
+                            echo "<span class='error-msg'>".htmlspecialchars($_SESSION['licenseError'], ENT_QUOTES, 'UTF-8')."</span>";
+                            unset($_SESSION['licenseError']);
+                        }
                     ?>
-                </error>
+                </div>
             </div>
 
             <!-- ...................................................................................................Route details ..................................................................................................... -->
 
             <div class="regErrorH">
-                <input type="text" name="routeNameH" class="regRouteName" placeholder="Route Name">
-                <error>
+                <input type="text" name="routeNameH" class="regRouteName" placeholder="Route Name" required>
+                <div class="form-error">
                     <?php
-                            if(isset($_SESSION['routeNameError'])){
-                                echo "<br><e>".$_SESSION['routeNameError']."</e>";
-                            }
+                        if(isset($_SESSION['routeNameError'])){
+                            echo "<span class='error-msg'>".htmlspecialchars($_SESSION['routeNameError'], ENT_QUOTES, 'UTF-8')."</span>";
+                            unset($_SESSION['routeNameError']);
+                        }
                     ?>
-                </error>
+                </div>
             </div>
 
             <div class="regRoutes">
                 <div class="regErrorH">
-                    <input type="text" name="routeStartH" class="regRouteStart" placeholder="Start Route">
-                    <error>
+                    <input type="text" name="routeStartH" class="regRouteStart" placeholder="Start Route" required>
+                    <div class="form-error">
                         <?php
                         if(isset($_SESSION['startRouteError'])){
-                            echo "<br><e>".$_SESSION['startRouteError']."</e>";
+                            echo "<span class='error-msg'>".htmlspecialchars($_SESSION['startRouteError'], ENT_QUOTES, 'UTF-8')."</span>";
+                            unset($_SESSION['startRouteError']);
                         }
                         ?>
-                    </error>
+                    </div>
                 </div>
                 
                 <div class="regErrorH">
-                <input type="text" name="routeEndH" class="regRouteEnd" placeholder="End Route">
-                    <error>
+                    <input type="text" name="routeEndH" class="regRouteEnd" placeholder="End Route" required>
+                    <div class="form-error">
                         <?php
                         if(isset($_SESSION['endRouteError'])){
-                            echo "<br><e>".$_SESSION['endRouteError']."</e>";
-                            }
+                            echo "<span class='error-msg'>".htmlspecialchars($_SESSION['endRouteError'], ENT_QUOTES, 'UTF-8')."</span>";
+                            unset($_SESSION['endRouteError']);
+                        }
                         ?>
-                    </error>
+                    </div>
                 </div>
             </div>
 
             <div class="regErrorH">
-                <error>
-                <?php
+                <div class="form-error">
+                    <?php
                     if(isset($_SESSION['routeComboError'])){
-                        echo "<br><e>".$_SESSION['routeComboError']."</e>";
+                        echo "<span class='error-msg'>".htmlspecialchars($_SESSION['routeComboError'], ENT_QUOTES, 'UTF-8')."</span>";
+                        unset($_SESSION['routeComboError']);
                     }
                     ?> 
-                </error>
+                </div>
             </div>
 
             <!-- ...................................................................................................Bus details ..................................................................................................... -->
 
             <div class="regBusInfos">
                 <div class="regErrorH">
-                    <input type="text" name="busModelH" class="regBusModel" placeholder="Bus Model">
-                    <error>
+                    <input type="text" name="busModelH" class="regBusModel" placeholder="Bus Model" required>
+                    <div class="form-error">
                         <?php
                         if(isset($_SESSION['busModelError'])){
-                            echo "<br><e>".$_SESSION['busModelError']."</e>";
+                            echo "<span class='error-msg'>".htmlspecialchars($_SESSION['busModelError'], ENT_QUOTES, 'UTF-8')."</span>";
+                            unset($_SESSION['busModelError']);
                         }
                         ?>
-                    </error>
+                    </div>
                 </div>
                 
                 <div class="regErrorH">
-                <input type="text" name="busRegNoH" class="regRegNo" placeholder="Bus Reg No">
-                    <error>
+                    <input type="text" name="busRegNoH" class="regRegNo" placeholder="Bus Reg No" required>
+                    <div class="form-error">
                         <?php
                         if(isset($_SESSION['busRegError'])){
-                            echo "<br><e>".$_SESSION['busRegError']."</e>";
-                            }
+                            echo "<span class='error-msg'>".htmlspecialchars($_SESSION['busRegError'], ENT_QUOTES, 'UTF-8')."</span>";
+                            unset($_SESSION['busRegError']);
+                        }
                         ?>
-                    </error>
+                    </div>
                 </div>
             </div>
 
             <!-- ...................................................................................................Schedule details ..................................................................................................... -->
 
             <div class="regErrorH">
-                <select name="scheduleDayH" class="regSchDay">
+                <select name="scheduleDayH" class="regSchDay" required>
                     <option value="Sunday">Sunday</option>
                     <option value="Monday">Monday</option>
                     <option value="Tuesday">Tuesday</option>
@@ -199,50 +213,51 @@
             
             <div class="regSchTimes">
                 <div class="regErrorH">
-                    <input type="time" name="scheduleStTimeH" class="regSchStTime" placeholder="Start Time">
-                    <error>
+                    <input type="time" name="scheduleStTimeH" class="regSchStTime" required>
+                    <div class="form-error">
                         <?php
                             if(isset($_SESSION['scheduleStError'])){
-                                echo "<br><e>".$_SESSION['scheduleStError']."</e>";
+                                echo "<span class='error-msg'>".htmlspecialchars($_SESSION['scheduleStError'], ENT_QUOTES, 'UTF-8')."</span>";
+                                unset($_SESSION['scheduleStError']);
                             }
                         ?>
-                    </error>
+                    </div>
                 </div>
 
                 <div class="regErrorH">
-                    <input type="time" name="scheduleEndTimeH" class="regSchEndTime" placeholder="Start Time">
-                    <error>
+                    <input type="time" name="scheduleEndTimeH" class="regSchEndTime" required>
+                    <div class="form-error">
                         <?php
                             if(isset($_SESSION['scheduleEndError'])){
-                                echo "<br><e>".$_SESSION['scheduleEndError']."</e>";
+                                echo "<span class='error-msg'>".htmlspecialchars($_SESSION['scheduleEndError'], ENT_QUOTES, 'UTF-8')."</span>";
+                                unset($_SESSION['scheduleEndError']);
                             }
                         ?>
-                    </error>        
+                    </div>        
                 </div>
             </div>
  
             <div class="regErrorH">
-                <error>
-                <?php
+                <div class="form-error">
+                    <?php
                     if(isset($_SESSION['scheduleExistsError'])){
-                        echo "<br><e>".$_SESSION['scheduleExistsError']."</e>";
+                        echo "<span class='error-msg'>".htmlspecialchars($_SESSION['scheduleExistsError'], ENT_QUOTES, 'UTF-8')."</span>";
+                        unset($_SESSION['scheduleExistsError']);
                     }
                     ?> 
-                </error>
+                </div>
             </div>
 
-
-           <?php 
+            <?php 
                 foreach($_SESSION as $key => $value){
-                    if($key != 'A_id'){
+                    if($key != 'A_id' && $key != 'La_id'){
                         unset($_SESSION[$key]);
                     }
                 }
-           ?>
+            ?>
             
-            <input type="submit" name="registerDriverH" class="regAdd" value="Sign Up">
-            <!-- <p class="regPasAlre">Already <a href="../login/loginH.php">Signed up</a>?</p> -->
+            <input type="submit" name="registerDriverH" class="regAdd" value="Register Driver">
         </form>
-    </alignCenter>
+    </div>
 </body>
 </html>

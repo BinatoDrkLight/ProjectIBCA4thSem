@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./track.css">
+    <link rel="stylesheet" href="../../All/allCss.css">
     <link rel="stylesheet" href="../../All/allMenu.css">
+    <link rel="stylesheet" href="./track.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
@@ -21,7 +23,7 @@
     ?>
     <div id="map"></div>
     <?php
-        include_once("../../All/allMenu.php");
+        include_once("../home/driverMenu.php");
     ?>
     <script src="./track.js"></script>
 </body>

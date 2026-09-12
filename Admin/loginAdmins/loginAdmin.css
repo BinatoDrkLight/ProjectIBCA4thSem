@@ -12,7 +12,7 @@
 }
 
 .logBtnH{
-    margin: -.1rem 0 .6rem 0;
+    margin: calc(-.1rem - 8px) 0 calc(.6rem - 2px) 0;
     padding: 1.2em 3.4em;
     border-radius: 4rem;
 }
@@ -21,8 +21,16 @@
     margin-bottom: 0;
 }
 
+.form-error{
+    margin: 0.5rem 0 0.3rem 0;
+}
+
+.error-msg{
+    color: rgb(195, 0, 0);
+    display: block;
+    margin-top: 0;
+}
+
 input{
     text-align: left;
 }
-
-

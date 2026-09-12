@@ -41,18 +41,19 @@ a{
 
 }
 
-error{
-    display: block; 
-    height: 1.6rem;
+error, .form-error{
+    display: block;
+    min-height: 1.4rem;
+    height: auto;
 }
 
-e{
+e, .error-msg{
     color: rgb(195, 0, 0);
     display: block;
-    margin-top: -1rem;
+    margin-top: 0;
 }
 
-alignCenter{
+alignCenter, .form-align-center{
     display: flex;
     justify-content: center;
 }

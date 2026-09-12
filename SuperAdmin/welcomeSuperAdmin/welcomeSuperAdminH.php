@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,8 +12,12 @@
     <title>Welcome Super Admin</title>
 </head>
 <body>
-        <h1 class="welcomeSuperH"><section> Welcome </section> <section> Super </section> Admin</h1>
-        <h1>Next</h1>
-        <a href="../manageAdmin/manageAdminH.php"><h1><i class="fa-sharp fa-solid fa-arrow-right"></i></h1></a>
+    <h1 class="welcomeSuperH"><section> Welcome </section> <section> Super </section> Admin</h1>
+    <h2>Next</h2>
+    <div class="next-link">
+        <a href="../manageAdmin/manageAdminH.php" aria-label="Go to Manage Admins">
+            <i class="fa-sharp fa-solid fa-arrow-right"></i>
+        </a>
+    </div>
 </body>
 </html>

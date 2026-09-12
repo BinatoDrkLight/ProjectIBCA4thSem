@@ -1,0 +1,44 @@
+.menusH{
+    display: none;
+}
+
+.homeTracH{
+    visibility: hidden;
+}
+
+.profileColH{
+    display: inline-block;
+    margin-left: 1rem;
+}
+
+.profilePicH{
+    margin-top: 3rem;
+    height: 10rem;
+    width: 10rem;
+    background-color: black;
+}
+
+.profileCateH{
+    margin-top: 1rem;
+}
+
+.profileInfoH{
+    margin: 2.4rem 0 0 1rem;
+}
+
+.profileInfoLeftH p{
+    font-size: 1.1rem;
+    margin-bottom: .8rem;
+}
+
+.profileMoreH{
+    margin-top: 3rem;
+}
+
+.profileMoreH, .profileLogoutH{
+   padding: .5rem 1.8rem;
+}
+
+.profileLogoutH a{
+    color: black;
+}

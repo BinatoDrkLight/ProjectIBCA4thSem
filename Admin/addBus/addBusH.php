@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register Admin</title>
+    <title>Add Bus</title>
     <link rel="stylesheet" href="../../All/allCss.css">
     <link rel="stylesheet" href="../allAdd/allAdd.css">
     <link rel="stylesheet" href="addBus.css">
@@ -15,43 +15,44 @@
     <h2 class="regLogoH">Trackie<sup>BDL</sup></h2>
     <h1 class="regHeaH">Add Bus</h1>
 
-    <alignCenter>
+    <div class="form-align-center">
         <form action="addBusP.php" method="post" class="regForm">           
             <div class="regBusInfos">
                 <div class="regErrorH">
-                    <input type="text" name="busModelH" class="regBusModel" placeholder="Bus Model">
-                    <error>
+                    <input type="text" name="busModelH" class="regBusModel" placeholder="Bus Model" required>
+                    <div class="form-error">
                         <?php
                         if(isset($_SESSION['busModelError'])){
-                            echo "<br><e>".$_SESSION['busModelError']."</e>";
+                            echo "<span class='error-msg'>".htmlspecialchars($_SESSION['busModelError'], ENT_QUOTES, 'UTF-8')."</span>";
+                            unset($_SESSION['busModelError']);
                         }
                         ?>
-                    </error>
+                    </div>
                 </div>
                 
                 <div class="regErrorH">
-                <input type="text" name="busRegNoH" class="regRegNo" placeholder="Bus Reg No">
-                    <error>
+                    <input type="text" name="busRegNoH" class="regRegNo" placeholder="Bus Reg No (e.g. BA12KA3456)" required>
+                    <div class="form-error">
                         <?php
                         if(isset($_SESSION['busRegError'])){
-                            echo "<br><e>".$_SESSION['busRegError']."</e>";
-                            }
+                            echo "<span class='error-msg'>".htmlspecialchars($_SESSION['busRegError'], ENT_QUOTES, 'UTF-8')."</span>";
+                            unset($_SESSION['busRegError']);
+                        }
                         ?>
-                    </error>
+                    </div>
                 </div>
              </div>
 
             <?php 
                 foreach($_SESSION as $key => $value){
-                    if($key != 'La_id'){
+                    if($key != 'La_id' && $key != 'A_id'){
                         unset($_SESSION[$key]);
                     }
                 }
             ?>
             
             <input type="submit" name="registerBusH" class="regAdd" value="Add Bus">
-            <!-- <p class="regPasAlre">Already <a href="../login/loginH.php">Signed up</a>?</p> -->
         </form>
-    </alignCenter>
+    </div>
 </body>
 </html>

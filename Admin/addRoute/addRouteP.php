@@ -50,13 +50,10 @@
             $resArrCheckRoute = preparedStmt($checkRouteQuery, $con, $checkRouteTypes, $checkRouteParams);
             $resCheckRouteData = mysqli_stmt_get_result($resArrCheckRoute['stmt']);
 
-            //Check if seccess
+            //Check if success
             if(mysqli_num_rows($resCheckRouteData) > 0){
-                echo "Route already exists in route table";
                 $isValid = false;
-                $_SESSION['routeExistsError'] = "These route already Exists";
-            } else {
-                echo "Route not found in route table";
+                $_SESSION['routeExistsError'] = "This route combination already exists.";
             }
             mysqli_stmt_close($resArrCheckRoute['stmt']);
         }
@@ -71,18 +68,17 @@
             //Call the preparedStmt function
             $resArrInsertRoute = preparedStmt($insertRouteQuery, $con, $insertRouteTypes, $insertRouteParams);
 
-            //Check if seccess
+            //Check if success
             if(!$resArrInsertRoute['res']){
-                echo "Couldn't insert into route table";
                 mysqli_stmt_close($resArrInsertRoute['stmt']);
                 mysqli_close($con);
-                die;
+                die("Couldn't insert into route table.");
             } else {
-                echo "Insertion in route table successful";
+                mysqli_stmt_close($resArrInsertRoute['stmt']);
+                mysqli_close($con);
                 header("Location: ../manageDriver/manageDriverH.php");
                 exit();
             }
-            mysqli_stmt_close($resArrInsertRoute['stmt']);
         } else {
             mysqli_close($con);
             header("Location: ./addRouteH.php");

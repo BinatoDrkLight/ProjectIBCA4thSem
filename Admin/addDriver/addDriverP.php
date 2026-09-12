@@ -250,16 +250,13 @@
             $resCheckArrSchedule = preparedStmt($checkScheduleQuery, $con, $checkScheduleTypes, $checkScheduleParams);
             $resCheckScheduleData = mysqli_stmt_get_result($resCheckArrSchedule['stmt']);
 
-            //Check if seccess
             if(mysqli_num_rows($resCheckScheduleData) == 0){
-                echo "Schedule doesn't exists in schedule table";
                 $isValid = false;
-                $_SESSION['scheduleExistsError'] = "These schedule doesn't Exists" . $d_id;
+                $_SESSION['scheduleExistsError'] = "This schedule does not exist in schedule records.";
             } else {
                while($row = mysqli_fetch_assoc($resCheckScheduleData)){
                 $s_id = $row['S_id'];
                }
-                echo $s_id;
             }
             mysqli_stmt_close($resCheckArrSchedule['stmt']);
         }
@@ -279,18 +276,13 @@
 
             // Check execution result
             if (!$resInsertArrDriver['res']) {
-                echo "Couldn't insert into driver table";
                 mysqli_stmt_close($resInsertArrDriver['stmt']);
                 mysqli_close($con);
-                die;
-            } else {
-                echo "Insertion in driver table successful";
+                die("Couldn't insert into driver table.");
             }
 
             // Get the inserted ID
             $d_id = mysqli_insert_id($con);
-            echo $d_id;
-
             mysqli_stmt_close($resInsertArrDriver['stmt']);
             //-----------------------------------------------------------------------------------------------------------------------
             
@@ -302,14 +294,11 @@
             //Call the preparedStmt function
             $resInsertArrPhone = preparedStmt($insertPhoneQuery, $con, $insertPhoneTypes, $insertPhoneParams);
 
-            //Check if seccess
+            //Check if success
             if(!$resInsertArrPhone['res']){
-                echo "Couldn't insert into d_phone_nos table";
                 mysqli_stmt_close($resInsertArrPhone['stmt']);
                 mysqli_close($con);
-                die;
-            } else {
-                echo "Insertion in d_phone_nos table successful";
+                die("Couldn't insert into d_phone_nos table.");
             }
             mysqli_stmt_close($resInsertArrPhone['stmt']);
 
@@ -327,12 +316,10 @@
 
             //Check if success
             if(!$resInsertArrLoginRegister['res']){
-                echo "Couldn't insert into the loginregister table";
                 mysqli_stmt_close($resInsertArrLoginRegister['stmt']);
                 mysqli_close($con);
-                die;
+                die("Couldn't insert into loginregister table.");
             } else {
-                echo "Insertion to loginregister successful! <br>";
                 mysqli_stmt_close($resInsertArrLoginRegister['stmt']);
                 mysqli_close($con);
                 header("Location: ../manageDriver/manageDriverH.php");

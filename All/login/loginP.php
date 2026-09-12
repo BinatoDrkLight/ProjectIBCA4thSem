@@ -7,8 +7,8 @@
     if(isset($_POST['submitH'])){
         //If submitted using post method.
         if($_SERVER["REQUEST_METHOD"] == "POST"){
-            $usernameP = $_POST['usernameH'];
-            $passwordP = $_POST['passwordH']; 
+            $usernameP = trim($_POST['usernameH'] ?? '');
+            $passwordP = $_POST['passwordH'] ?? ''; 
         
             //Connect to database.
             include_once('../../All/allDatabaseConnection.php');
@@ -42,9 +42,12 @@
 
                 //Compare the passwords
                 if(password_verify($passwordP, $hashPassD)){
+                    session_regenerate_id(true);
                     $_SESSION['Lr_id'] = $lrId;
-                    $con->close();
+                    $_SESSION['user_role'] = $lrUser;
                     mysqli_stmt_close($stmtUser);
+                    $con->close();
+
                     if($lrUser === "Passenger"){
                         header("Location: ../../Passenger/home/home.php");
                         exit();
@@ -55,11 +58,11 @@
                     }
                 }
             }
-            $con->close();
             mysqli_stmt_close($stmtUser);
+            $con->close();
             $_SESSION['logError'] = "Invalid Credentials";
             header("Location: loginH.php");
+            exit();
         }  
     }
- 
 ?>

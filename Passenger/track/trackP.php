@@ -2,11 +2,12 @@
 session_start();
 header('Content-Type: application/json');
 
-// include your DB connection
 include_once("../../All/allDatabaseConnection.php");
 $con = dbConnection();
 
-$sql = "SELECT L_longitude AS longitude, L_latitude AS latitude, B_id AS id, L_id AS l_id FROM location";
+$sql = "SELECT l.L_longitude AS longitude, l.L_latitude AS latitude, l.B_id AS id, l.L_id AS l_id, b.B_model AS model, b.B_reg_no AS reg_no 
+        FROM location AS l
+        LEFT JOIN bus AS b ON l.B_id = b.B_id";
 $result = mysqli_query($con, $sql);
 $busData = [];
 
@@ -16,10 +17,11 @@ if ($result) {
     }
 }
 
+$con->close();
+
 echo json_encode([
     "status" => "success",
-    "message" => "sent successfylly",
+    "message" => "sent successfully",
     "busData" => $busData
 ]);
-
 ?>
