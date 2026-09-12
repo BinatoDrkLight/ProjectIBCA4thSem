@@ -1,8 +1,3 @@
--- MariaDB dump 10.19  Distrib 10.4.32-MariaDB, for Win64 (AMD64)
---
--- Host: localhost    Database: trackie
--- ------------------------------------------------------
--- Server version	10.4.32-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -14,11 +9,6 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
---
--- Table structure for table `admin`
---
-
 DROP TABLE IF EXISTS `admin`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
@@ -32,40 +22,9 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `admin`
---
-
-LOCK TABLES `admin` WRITE;
 /*!40000 ALTER TABLE `admin` DISABLE KEYS */;
 INSERT INTO `admin` VALUES (14,'Admin','One','Special','Budhanilkantha');
 /*!40000 ALTER TABLE `admin` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb4 */ ;
-/*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_unicode_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_ZERO_IN_DATE,NO_ZERO_DATE,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
-/*!50003 CREATE*/ /*!50017 DEFINER=`root`@`localhost`*/ /*!50003 TRIGGER `before_admin_delete` BEFORE DELETE ON `admin` FOR EACH ROW BEGIN
-    -- Ensure the admin_id in drivers remains the same
-    UPDATE driver
-    SET A_id = OLD.A_id
-    WHERE A_id = OLD.A_id;
-END */;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
-
---
--- Table structure for table `bookmarks`
---
-
 DROP TABLE IF EXISTS `bookmarks`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
@@ -81,19 +40,8 @@ CREATE TABLE `bookmarks` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `bookmarks`
---
-
-LOCK TABLES `bookmarks` WRITE;
 /*!40000 ALTER TABLE `bookmarks` DISABLE KEYS */;
 /*!40000 ALTER TABLE `bookmarks` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `bus`
---
-
 DROP TABLE IF EXISTS `bus`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
@@ -105,20 +53,9 @@ CREATE TABLE `bus` (
 ) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `bus`
---
-
-LOCK TABLES `bus` WRITE;
 /*!40000 ALTER TABLE `bus` DISABLE KEYS */;
 INSERT INTO `bus` VALUES (1,'Sajha Yatayat','Ba12Ka98'),(2,'Nepal Yatayat','Ka34Kha78'),(3,'Kasthamandap','Ba23Ka73'),(4,'Valley Yatayat','Kha54ka60'),(5,'Sajha Yatayat','Cha43Kha80');
 /*!40000 ALTER TABLE `bus` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `d_phone_nos`
---
-
 DROP TABLE IF EXISTS `d_phone_nos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
@@ -132,20 +69,9 @@ CREATE TABLE `d_phone_nos` (
 ) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `d_phone_nos`
---
-
-LOCK TABLES `d_phone_nos` WRITE;
 /*!40000 ALTER TABLE `d_phone_nos` DISABLE KEYS */;
 INSERT INTO `d_phone_nos` VALUES (26,'9823820000',28),(27,'9823820002',29),(28,'9823820003',30),(29,'9823820004',31),(30,'9823820005',32),(31,'9823820006',33),(32,'9823820007',34),(33,'9823820008',NULL),(34,'9823820009',NULL),(35,'9823820010',37);
 /*!40000 ALTER TABLE `d_phone_nos` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `driver`
---
-
 DROP TABLE IF EXISTS `driver`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
@@ -172,20 +98,9 @@ CREATE TABLE `driver` (
 ) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `driver`
---
-
-LOCK TABLES `driver` WRITE;
 /*!40000 ALTER TABLE `driver` DISABLE KEYS */;
 INSERT INTO `driver` VALUES (28,'Ram','Lal','Naranthan','120000000001',NULL,14,1,7,1),(29,'Pogo','Lal','Naranthan','120000000002',NULL,14,2,8,2),(30,'Sano','Manjiro','Gokarna','120000000003',NULL,14,3,9,3),(31,'Yami','Dancho','BlackBull','120000000004',NULL,14,2,10,3),(32,'Nova','Chrono','Clovers Kingdom','120000000005',NULL,14,4,11,4),(33,'Yuno','Grinberryall','Spade Kingdom','120000000006',NULL,14,2,12,5),(34,'Secre','kilt','Heart Kingdom','120000000007',NULL,14,5,13,2),(37,'Orochimaru','Sanin','Hidden Leaf','120000000010',NULL,14,1,16,1);
 /*!40000 ALTER TABLE `driver` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `location`
---
-
 DROP TABLE IF EXISTS `location`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
@@ -203,20 +118,9 @@ CREATE TABLE `location` (
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `location`
---
-
-LOCK TABLES `location` WRITE;
 /*!40000 ALTER TABLE `location` DISABLE KEYS */;
 INSERT INTO `location` VALUES (10,'85.3180416','27.7086208',2,NULL),(11,'85.3531534256043','27.753121455341315',1,NULL),(12,'85.3539071000','27.74029000',3,NULL),(13,'85.34646000','27.70939000',4,NULL),(14,'85.31523700','27.70634500',5,NULL);
 /*!40000 ALTER TABLE `location` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `loginadmin`
---
-
 DROP TABLE IF EXISTS `loginadmin`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
@@ -233,20 +137,9 @@ CREATE TABLE `loginadmin` (
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `loginadmin`
---
-
-LOCK TABLES `loginadmin` WRITE;
 /*!40000 ALTER TABLE `loginadmin` DISABLE KEYS */;
 INSERT INTO `loginadmin` VALUES (1,'superadmin','superadmin@gmail.com','$2y$10$o2qPnrE832SgkvuOMvEN2ezRzTFfUy.E.UrYgDkYQilnHflcWNeum','SuperAdmin',NULL),(14,'adminone@gmail.com','adminone@gmail.com','$2y$10$6yrInksASU0hlAbNBt/Xxej8DcgveHWRRoToA6H5a0lwb9SobaFgu','Admin',14);
 /*!40000 ALTER TABLE `loginadmin` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `loginregister`
---
-
 DROP TABLE IF EXISTS `loginregister`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
@@ -266,20 +159,9 @@ CREATE TABLE `loginregister` (
 ) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `loginregister`
---
-
-LOCK TABLES `loginregister` WRITE;
 /*!40000 ALTER TABLE `loginregister` DISABLE KEYS */;
 INSERT INTO `loginregister` VALUES (24,'binatolight@gmail.com','binatolight@gmail.com','$2y$10$wUZ5/ri4UFnAuJOOTFXmoudw6PNUYznxCLPvk7V2Gf53TCM4ga7oC','Passenger',NULL,14),(28,'ramlal@gmail.com','ramlal@gmail.com','$2y$10$C1gMdkOtEvlX4Hi.HwVdye9SJzpsZx0laevEPBRS6gKaTrJJ8oyPS','Driver',28,NULL),(29,'pogolal@gmail.com','pogolal@gmail.com','$2y$10$JiGZ3l0U0zuiGmyH.n6ku.uV8czPevdBXwsNDBbBDzygMtnzpEDnW','Driver',29,NULL),(30,'sanomanjiro@gmail.com','sanomanjiro@gmail.com','$2y$10$B6Vt/jOzk5kN66RCkv/xPesCbdo7jTcjbH4j0WgxmEzTo5iStfH4G','Driver',30,NULL),(31,'yamidancho@gmail.com','yamidancho@gmail.com','$2y$10$tlFWEOKnIkZiHZZbxAichOTAloKM2o1C2mjOZfEb3GQsQkSWGl9fq','Driver',31,NULL),(32,'novachrono@gmail.com','novachrono@gmail.com','$2y$10$wb6s1/EdDn6oxYedqYmAm.z/ruQzcjBPh2hhu7p4YYHN4W7.aYzam','Driver',32,NULL),(33,'yunogrinberryall@gmail.com','yunogrinberryall@gmail.com','$2y$10$/sKk74fdZtyUzJAIlW9VF.2CBdrGe1PQ23dFlhlcLfUPNcEU1uURi','Driver',33,NULL),(34,'secrekilt@gmail.com','secrekilt@gmail.com','$2y$10$3BFG4jPFVJl50XLMq6kVousHz3ei6XajwKpsE5tA4hvhcHalHhzFW','Driver',34,NULL),(35,'gohanson@gmail.com','gohanson@gmail.com','$2y$10$IR7N.3eqQaixcNL0QnqNreU13rDMLqaIUYGVocxYa/cdFASILKYha','Driver',NULL,NULL),(36,'paintendo@gmail.com','paintendo@gmail.com','$2y$10$Rvik83PI7rOknGfePuCj9O4XDWVWl0pqCWW8uXlZLh2HNyMZ/PcHi','Driver',NULL,NULL),(37,'orochimarusanin@gmail.com','orochimarusanin@gmail.com','$2y$10$J4jJtjZtGtl6PbMWxGpY/.MGuXnynfDPp.kSrwh2h5Cr1//MB/CPq','Driver',37,NULL),(38,'usernone@gmail.com','usernone@gmail.com','$2y$10$jY759Jm0IRe2eToOa0X3WeTeNfgQ7gPHjQlDlBG7RSOK87MYfk9Wi','Passenger',NULL,18),(39,'adminone@gmail.com','adminone@gmail.com','$2y$10$5IYYThJQEXa5UCazMSpXtO67b6wPpPmx6w8PEGpdB8SDm5YQpKSDe','Passenger',NULL,19);
 /*!40000 ALTER TABLE `loginregister` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `p_phone_nos`
---
-
 DROP TABLE IF EXISTS `p_phone_nos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
@@ -293,20 +175,9 @@ CREATE TABLE `p_phone_nos` (
 ) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `p_phone_nos`
---
-
-LOCK TABLES `p_phone_nos` WRITE;
 /*!40000 ALTER TABLE `p_phone_nos` DISABLE KEYS */;
 INSERT INTO `p_phone_nos` VALUES (13,'9823820860',14),(14,'9823829861',NULL),(15,'9841000001',NULL),(16,'9823820123',NULL),(17,'9868000001',18),(18,'9868000007',19);
 /*!40000 ALTER TABLE `p_phone_nos` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `passenger`
---
-
 DROP TABLE IF EXISTS `passenger`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
@@ -323,20 +194,9 @@ CREATE TABLE `passenger` (
 ) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `passenger`
---
-
-LOCK TABLES `passenger` WRITE;
 /*!40000 ALTER TABLE `passenger` DISABLE KEYS */;
 INSERT INTO `passenger` VALUES (14,'Binato','Light','binatolight@gmail.com','',NULL),(18,'User','None','usernone@gmail.com','',NULL),(19,'Admin','One','adminone@gmail.com','',NULL);
 /*!40000 ALTER TABLE `passenger` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `route`
---
-
 DROP TABLE IF EXISTS `route`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
@@ -349,20 +209,9 @@ CREATE TABLE `route` (
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `route`
---
-
-LOCK TABLES `route` WRITE;
 /*!40000 ALTER TABLE `route` DISABLE KEYS */;
 INSERT INTO `route` VALUES (1,'Budhanilkantha','Naranthan','Ratnapark'),(2,'Tokha','Hepali Height','Saibaba Chowk'),(3,'Gokarneshwor','Gokarna','Kalanki'),(4,'Kathmandu MN','Gausala','kamalpokhari'),(5,'Kirtipur','Ratnapark','Kirtipur');
 /*!40000 ALTER TABLE `route` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `schedule`
---
-
 DROP TABLE IF EXISTS `schedule`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
@@ -375,19 +224,9 @@ CREATE TABLE `schedule` (
 ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `schedule`
---
-
-LOCK TABLES `schedule` WRITE;
 /*!40000 ALTER TABLE `schedule` DISABLE KEYS */;
 INSERT INTO `schedule` VALUES (7,'Sunday','02:00:00','03:00:00'),(8,'Sunday','04:00:00','05:00:00'),(9,'Sunday','05:00:00','06:00:00'),(10,'Sunday','06:00:00','07:00:00'),(11,'Sunday','06:30:00','07:30:00'),(12,'Tuesday','02:00:00','03:00:00'),(13,'Tuesday','04:00:00','05:00:00'),(14,'Tuesday','05:00:00','06:00:00'),(15,'Tuesday','06:00:00','07:00:00'),(16,'Tuesday','06:30:00','07:30:00');
 /*!40000 ALTER TABLE `schedule` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Dumping routines for database 'trackie'
---
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -398,4 +237,3 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-09-12 12:03:50
